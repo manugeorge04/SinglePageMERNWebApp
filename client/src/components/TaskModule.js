@@ -44,6 +44,8 @@ const TaskModule = () => {
     }    
   }
 
+  microsoftTeams.initialize()
+
   const handleShareButton = () => {
     microsoftTeams.tasks.submitTask({   //returning an object
       holidayList,
@@ -52,7 +54,7 @@ const TaskModule = () => {
   }
  
   return(      
-    <div style={{marginLeft: "20px", marginRight:"20px"}}>
+    <div style={{paddingLeft: "20px", paddingRight:"20px", paddingBottom:"20px"}}>
     <h1>Regional Holiday List</h1>    
     <Dropdown  
       search               
