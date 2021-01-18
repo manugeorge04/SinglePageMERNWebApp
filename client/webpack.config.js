@@ -42,6 +42,9 @@ module.exports = (env, argv) => {
         ],
         devtool: isProduction? "source-map"  :"inline-source-map",
         devServer: {
+            proxy: {
+              '/api': 'http://localhost:3000'
+            },
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
             publicPath: '/dist/'
