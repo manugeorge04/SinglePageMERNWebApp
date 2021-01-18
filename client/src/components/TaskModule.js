@@ -44,7 +44,7 @@ const TaskModule = () => {
   }
  
   return(      
-    <div>
+    <div style={{marginLeft: "20px"}}>
     <h1>Holidates</h1>    
     <Dropdown  
       search               
