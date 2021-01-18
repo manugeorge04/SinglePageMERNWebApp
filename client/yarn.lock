@@ -1105,6 +1105,11 @@
     csstype "^2.6.7"
     lodash "^4.17.15"
 
+"@microsoft/teams-js@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/teams-js/-/teams-js-1.8.0.tgz#0990cc0447a5f2d56c5f3c20218f396fdbc3c610"
+  integrity sha512-3or+WqPJ73VHG6P5Bv/x882mzUASNLU2DIkzI5WPg9TW5vq2ISEv7yJ+fuRY9GNC0AcJiJQfzB+jl+HVgJAdcg==
+
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.tgz#da7c3996b8e6e19ebd14d82eaced2313e7769f9b"

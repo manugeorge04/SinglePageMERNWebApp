@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react'
-import {Dropdown, Table} from '@fluentui/react-northstar'
+import {Dropdown, Table, Button} from '@fluentui/react-northstar'
+import * as microsoftTeams from "@microsoft/teams-js";
 import axios from'axios'
 
 const TaskModule = () => {
@@ -42,10 +43,17 @@ const TaskModule = () => {
       })
     }    
   }
+
+  const handleShareButton = () => {
+    microsoftTeams.tasks.submitTask({   //returning an object
+      holidayList,
+      location
+    });
+  }
  
   return(      
     <div style={{marginLeft: "20px", marginRight:"20px"}}>
-    <h1>Holidates</h1>    
+    <h1>Regional Holiday List</h1>    
     <Dropdown  
       search               
       items={inputItems}           
@@ -59,6 +67,8 @@ const TaskModule = () => {
     />
     <br></br>
     {!!location && <Table compact header={header}  rows={holidayList} aria-label="Holidays" />}
+    <br></br>
+    {!!location && <Button content="Share" primary  className="shareBtn" onClick={handleShareButton}/>}
   </div>
   )
 }
