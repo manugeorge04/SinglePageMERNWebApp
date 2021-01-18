@@ -7,8 +7,7 @@
     "serve": "live-server public",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack -p --mode=production",
-    "dev-server": "webpack-dev-server",
-    "start": "node ../server.js"
+    "dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "@babel/cli": "^7.10.1",
