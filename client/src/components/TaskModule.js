@@ -13,29 +13,30 @@ const TaskModule = () => {
   ]
 
   const header = {
-    items: ['Occasion', '']
-  }
-
-  
+    items: ['Occasion', 'Date']
+  }  
 
   const [location, setLocation] = useState(""); 
   const [holidayList, setHolidayList]  = useState([])
-  
 
-  {console.log("Re-render")}
   useEffect(() => {  
     fetchdetails()  
   }, [location])    
 
-  const fetchdetails = () => {
-    console.log("Inside fetch")
-    console.log(location)
+  const fetchdetails = () => {   
     if (location !== ""){
       axios.get(`/api/find/${location}`).then((res) => {        
-        console.log(res.data)
-        setHolidayList(res.data)
-        console.log("state has been set lets check state")
-        console.log(holidayList)
+        const holidayData = res.data
+        const rows = holidayData.map((holiday) => {
+          return {
+            key : holiday._id,
+            items : [
+              holiday.occasion,
+              holiday.date
+            ]
+          }
+        })            
+        setHolidayList(rows)     
       }).catch((err) => {
         console.log(err)
       })
@@ -44,9 +45,6 @@ const TaskModule = () => {
  
   return(      
     <div>
-    {console.log("Inside jsx")}      
-    {console.log(location)}  
-    {console.log(holidayList)}
     <h1>Holidates</h1>    
     <Dropdown  
       search               
@@ -59,7 +57,8 @@ const TaskModule = () => {
       }}         
       placeholder = "Enter your location here..."  
     />
-    {!!location && <Table location={location} />}
+    <br></br>
+    {!!location && <Table compact header={header}  rows={holidayList} aria-label="Holidays" />}
   </div>
   )
 }
