@@ -70,7 +70,7 @@ const TaskModule = () => {
     <br></br>
     {!!location && <Table compact header={header}  rows={holidayList} aria-label="Holidays" />}
     <br></br>
-    {!!location && <Button content="Share" primary  className="shareBtn" onClick={handleShareButton}/>}
+    {!!location && <Button content="Post" primary  className="shareBtn" onClick={handleShareButton}/>}
   </div>
   )
 }
