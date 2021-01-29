@@ -45,6 +45,6 @@ Create a `.env` file in the root directory and add the following lines
 
 ### Open another terminal :
 
-### `cd client && yarn run dev-server`
+### `cd ./client && yarn run dev-server`
 
 
